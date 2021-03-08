@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap");
+
 /* ***** Custom Properties ***** */
 :root {
   --first-color: #e4e3e3;
@@ -16,12 +18,83 @@
   --text-color: #222;
   --white-alpha-color: rgba(255, 255, 255, 0.5);
   --black-alpha-color: rgba(0, 0, 0, 0.5);
+  --font: "IBM Plex Sans", sans-serif;
 }
 
 /* ***** Reset ***** */
+html {
+  box-sizing: border-box;
+  font-family: var(--font);
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--text-color);
+}
+
+a {
+  color: var(--link-color);
+  transition: all 0.5s ease-out;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+h5 {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+h6 {
+  margin: 0;
+  font-size: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  line-height: 1.6;
+}
 
 /* ***** Components ***** */
 
 /* ***** Utilities ***** */
+
+.box-shadow-1 {
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
+}
 
 /* ***** Site Styles ***** */
