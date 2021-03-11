@@ -8,6 +8,7 @@
   --second-alpha-color: rgba(132, 169, 172, 0.75);
   --third-color: #3b6978;
   --third-alpha-color: rgba(59, 105, 120, 0.75);
+  --third-alpha-dark-color: rgba(59, 105, 120, 0.8);
   --white-color: #fff;
   --gray-light-color: #f3f3f3;
   --gray-color: #ccc;
@@ -328,6 +329,45 @@ progress::-moz-progress-bar {
   font-weight: bold;
   font-size: 2rem;
   text-decoration: none;
+}
+
+.portfolio-card {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+}
+
+.portfolio-card-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  background-color: var(--third-alpha-dark-color);
+  color: var(--white-color);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5 ease-in-out;
+}
+
+.portfolio-card:hover .portfolio-card-info {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.portfolio-card-info > div {
+  padding: 1rem;
+  border: thin solid var(--white-color);
+  width: 100%;
+  height: 100%;
 }
 
 .service-card {
