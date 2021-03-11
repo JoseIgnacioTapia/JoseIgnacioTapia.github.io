@@ -218,6 +218,9 @@ progress::-moz-progress-bar {
   font-size: 0.85rem;
 }
 /* ***** Utilities ***** */
+.bg-gray-light {
+  background-color: var(--gray-light-color);
+}
 
 .box-shadow-1 {
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
@@ -254,6 +257,16 @@ progress::-moz-progress-bar {
 
 .text-center {
   text-align: center;
+}
+
+.section-title {
+  border-top: thin solid var(--second-color);
+  border-bottom: thin solid var(--second-color);
+  margin: 2rem auto;
+  padding: 0.5rem 1rem;
+  width: 250px;
+  text-align: center;
+  color: var(--title-color);
 }
 
 .text-left {
@@ -311,6 +324,22 @@ progress::-moz-progress-bar {
   font-size: 2rem;
   text-decoration: none;
 }
+
+.service-card {
+  margin: 1rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.service-card h3 {
+  color: var(--title-color);
+}
+
+.service-card svg {
+  fill: var(--third-color);
+  margin-bottom: 1.25rem;
+}
+
 @media screen and (min-width: 768px) {
 }
 
