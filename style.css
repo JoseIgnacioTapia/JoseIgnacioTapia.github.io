@@ -93,6 +93,29 @@ p {
 }
 
 /* ***** Components ***** */
+/* Carousel */
+.carousel {
+  margin: 2rem auto;
+  padding: 2rem 0;
+  max-width: 800px;
+  text-align: center;
+  background-color: var(--carousel-bg-color);
+}
+
+.carousel input {
+  display: none;
+}
+
+.carousel label {
+  margin: 0 0.25rem;
+  border: medium solid var(--gray-dark-color);
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 /* HeroImage */
 .hero-image {
   background-image: var(--hero-image);
@@ -258,6 +281,12 @@ progress::-moz-progress-bar {
   font-size: 0.85rem;
 }
 /* ***** Utilities ***** */
+.avatar {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
 .bg-gray-light {
   background-color: var(--gray-light-color);
 }
@@ -295,10 +324,6 @@ progress::-moz-progress-bar {
   padding: 2rem 1rem;
 }
 
-.text-center {
-  text-align: center;
-}
-
 .section-title {
   border-top: thin solid var(--second-color);
   border-bottom: thin solid var(--second-color);
@@ -309,12 +334,20 @@ progress::-moz-progress-bar {
   color: var(--title-color);
 }
 
+.text-center {
+  text-align: center;
+}
+
 .text-left {
   text-align: left;
 }
 
 .text-right {
   text-align: right;
+}
+
+.text-third-color {
+  color: var(--third-color);
 }
 
 @media screen and (min-width: 1024px) {
