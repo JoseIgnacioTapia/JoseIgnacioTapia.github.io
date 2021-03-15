@@ -431,6 +431,27 @@ progress::-moz-progress-bar {
   margin-bottom: 2rem;
 }
 
+.contact-card {
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 100%;
+  height: 144px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-card > svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.contact-card > small {
+  margin-top: -1rem;
+}
+
 .header {
   position: fixed;
   left: 0;
@@ -534,7 +555,23 @@ progress::-moz-progress-bar {
   margin-bottom: 1.25rem;
 }
 
+.social-media a {
+  padding: 0 0.4rem;
+  text-decoration: none;
+}
+
+.social-media svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 @media screen and (min-width: 768px) {
+  .contact-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 48%);
+    justify-content: space-between;
+  }
+
   .portfolio > .container {
     display: grid;
     grid-template-columns: repeat(2, 50%);
@@ -589,6 +626,10 @@ progress::-moz-progress-bar {
     justify-content: space-between;
     align-items: center;
     max-width: var(--max-width);
+  }
+
+  .contact-cards {
+    grid-template-columns: repeat(4, 24%);
   }
 
   .header {
