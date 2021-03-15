@@ -44,7 +44,7 @@
           <a href="#about">About</a>
           <a href="#services">Services</a>
           <a href="#portfolio">Portfolio</a>
-          <a href="#testimonials">Testimonials</a>
+          <!-- <a href="#testimonials">Testimonials</a> -->
           <a href="#contact">Contact</a>
         </nav>
       </section>
@@ -716,8 +716,71 @@
             </small>
           </aside>
         </article>
-        <form class="contact-form box-shadow-1"></form>
-        <article id="thanks" class="modal"></article>
+        <form class="contact-form box-shadow-1">
+          <input
+            type="text"
+            name="name"
+            placeholder="Name *"
+            title="Name only accepts letters and blanks
+          "
+            pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email *"
+            title="Incorrect email"
+            pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
+            required
+          />
+          <textarea
+            name="comments"
+            cols="50"
+            rows="10"
+            placeholder="Comments"
+            required
+          ></textarea>
+          <div class="contact-form-loader">
+            <img
+              src="assets/loader.svg"
+              alt="Sending...
+            "
+            />
+          </div>
+          <input type="submit" class="btn" value="SEND MESAGGE" />
+        </form>
+        <article id="thanks" class="modal">
+          <div class="modal-content">
+            <article class="contact-form-response">
+              <h3>
+                Thank You!
+                <br />
+                For your comments
+              </h3>
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 23.9998C21.3333 23.9998 22.6667 18.6665 22.6667 18.6665H9.33334C9.33334 18.6665 10.6667 23.9998 16 23.9998Z"
+                  fill="#3B6978"
+                />
+                <path
+                  d="M16 2.6665C8.64799 2.6665 2.66666 8.64784 2.66666 15.9998C2.66666 23.3518 8.64799 29.3332 16 29.3332C23.352 29.3332 29.3333 23.3518 29.3333 15.9998C29.3333 8.64784 23.352 2.6665 16 2.6665ZM16 26.6665C10.1187 26.6665 5.33332 21.8812 5.33332 15.9998C5.33332 10.1185 10.1187 5.33317 16 5.33317C21.8813 5.33317 26.6667 10.1185 26.6667 15.9998C26.6667 21.8812 21.8813 26.6665 16 26.6665Z"
+                  fill="#3B6978"
+                />
+                <path
+                  d="M17.3333 16L20 16.016C20.016 15.4 20.2587 14.6667 21.3333 14.6667C22.408 14.6667 22.6507 15.4 22.6667 16H25.3333C25.3333 14.392 24.268 12 21.3333 12C18.3987 12 17.3333 14.392 17.3333 16ZM10.6667 14.6667C11.7413 14.6667 11.984 15.4 12 16H14.6667C14.6667 14.392 13.6013 12 10.6667 12C7.73199 12 6.66666 14.392 6.66666 16L9.33332 16.016C9.34932 15.4 9.59199 14.6667 10.6667 14.6667Z"
+                  fill="#3B6978"
+                />
+              </svg>
+            </article>
+          </div>
+        </article>
       </div>
     </section>
 
