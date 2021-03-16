@@ -275,7 +275,7 @@ p {
 
 .hero-image-title {
   color: var(--hero-text-color);
-  font-size: 6vw;
+  font-size: 10vw;
 }
 
 /* Menu */
@@ -664,6 +664,10 @@ progress::-moz-progress-bar {
     display: grid;
     grid-template-columns: repeat(2, 48%);
     justify-content: space-between;
+  }
+
+  .hero-image-title {
+    font-size: 5vw;
   }
 
   .portfolio > .container {
