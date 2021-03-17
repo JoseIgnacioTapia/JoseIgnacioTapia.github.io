@@ -626,7 +626,7 @@ progress::-moz-progress-bar {
 
 .portfolio-details {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 30% 30% 30%;
   grid-auto-rows: 2rem;
 }
 
