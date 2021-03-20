@@ -749,6 +749,12 @@ progress::-moz-progress-bar {
     grid-column: span 3;
   }
 
+  .portfolio-card-info p {
+    font-size: 1.5rem;
+    text-align: justify;
+    letter-spacing: -0.1rem;
+  }
+
   /* For more content(service cards) */
   /* .services > .container {
     grid-template-columns: repeat(3, 30%);
