@@ -722,7 +722,7 @@ progress::-moz-progress-bar {
   .portfolio-modal img {
     width: 50%;
     height: 40vh;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .services > .container {
