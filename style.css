@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
 
 /* ***** Custom Properties ***** */
 :root {
@@ -19,7 +19,7 @@
   --text-color: #222;
   --white-alpha-color: rgba(255, 255, 255, 0.5);
   --black-alpha-color: rgba(0, 0, 0, 0.5);
-  --font: "IBM Plex Sans", sans-serif;
+  --font: 'IBM Plex Sans', sans-serif;
   --max-width: 1200px;
   --header-height: 5rem;
 }
@@ -199,13 +199,13 @@ p {
   resize: none;
 }
 
-.contact-form input[type="submit"] {
+.contact-form input[type='submit'] {
   margin-top: 0;
   cursor: pointer;
   transition: all 0.5s ease-out;
 }
 
-.contact-form input[type="submit"]:hover {
+.contact-form input[type='submit']:hover {
   opacity: 0.75;
 }
 
@@ -249,7 +249,7 @@ p {
     grid-column: span 2;
   }
 
-  .contact-form input[type="submit"] {
+  .contact-form input[type='submit'] {
     margin-left: 0;
   }
 }
@@ -384,7 +384,7 @@ p {
   fill: var(--third-color);
 }
 
-.modal[id|="work"]:target {
+.modal[id|='work']:target {
   opacity: 1;
   pointer-events: auto;
 }
@@ -787,4 +787,9 @@ progress::-moz-progress-bar {
   .services .section-title {
     grid-column: span 3;
   } */
+}
+
+/* Project 12 */
+#work-12 span {
+  margin-right: 15px;
 }
