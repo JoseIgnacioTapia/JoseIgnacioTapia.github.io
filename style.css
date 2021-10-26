@@ -650,11 +650,11 @@ progress::-moz-progress-bar {
 }
 
 .portfolio-details span {
-  justify-self: center;
+  justify-self: left;
   align-self: center;
 }
 
-.portfolio-info h3 {
+.portfolio-details .portfolio-info h3 {
   padding: 0;
 }
 
