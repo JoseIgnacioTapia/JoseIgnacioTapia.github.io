@@ -775,7 +775,7 @@ progress::-moz-progress-bar {
 
   .portfolio-card-info p {
     font-size: 1.5rem;
-    text-align: justify;
+    text-align: center;
     letter-spacing: -0.1rem;
   }
 
