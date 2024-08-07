@@ -47,6 +47,14 @@
       content="https://joseignaciotapia.github.io/"
     />
     <link rel="canonical" href="https://joseignaciotapia.github.io/" />
+    <script type="importmap">
+			{
+				"imports": {
+					"three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+          "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+        }
+			}
+		</script>
   </head>
   <body>
     <header class="header">
@@ -91,28 +99,8 @@
       </section>
     </header>
     <section id="home" class="home">
-      <article
-        class="hero-image"
-        style="
-          --hero-image: url('assets/hero-image-home.jpg');
-          --attachment: fixed;
-        "
-      >
-        <aside
-          class="hero-image-opacity"
-          style="--hero-opacity-color: var(--black-alpha-color)"
-        >
-          <div class="hero-image-content">
-            <h2
-              class="hero-image-title"
-              style="--hero-text-color: var(--white-color)"
-            >
-              Welcome!
-            </h2>
-            <a href="#contact" class="btn">CONTACT ME</a>
-          </div>
-        </aside>
-      </article>
+      <div id="animation-container" class="hidden"></div>
+      <div id="loader">Loading...</div>
     </section>
     <section id="about" class="about section container full-lg-screen">
       <article class="text-lg-right">
@@ -2283,6 +2271,8 @@
     </section>
 
     <footer class="footer"><small>&copy; 2.024</small></footer>
+
+    <script type="module" src="index.js"></script>
 
     <script src="script.js"></script>
   </body>

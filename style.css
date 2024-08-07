@@ -254,6 +254,24 @@ p {
   }
 }
 
+/* Hero Animation */
+.hidden {
+  display: none;
+}
+
+#loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 2rem;
+  color: #333;
+}
+
+#animation-container {
+  display: none;
+}
+
 /* HeroImage */
 .hero-image {
   background-image: var(--hero-image);
