@@ -31,6 +31,8 @@ const mat = new THREE.MeshStandardMaterial({
   flatShading: true,
 });
 const mesh = new THREE.Mesh(geo, mat);
+// Reduce the object scale by 25%
+mesh.scale.set(0.8, 0.8, 0.8);
 scene.add(mesh);
 
 const wireMat = new THREE.MeshBasicMaterial({
@@ -38,7 +40,7 @@ const wireMat = new THREE.MeshBasicMaterial({
   wireframe: true,
 });
 const wireMesh = new THREE.Mesh(geo, wireMat);
-wireMesh.scale.setScalar(1.001);
+wireMesh.scale.setScalar(1);
 mesh.add(wireMesh);
 
 const hemiLight = new THREE.HemisphereLight(0x0099ff, 0xaa5500);
