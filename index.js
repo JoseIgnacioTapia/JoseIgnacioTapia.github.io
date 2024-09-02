@@ -19,11 +19,13 @@ camera.position.z = 2;
 const scene = new THREE.Scene();
 
 // Change background color scene
-scene.background = new THREE.Color(0x87ceeb);
+scene.background = new THREE.Color(0x0d1a2b);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.03;
+// Desable scroll zoom
+controls.enableZoom = false;
 
 const geo = new THREE.IcosahedronGeometry(1.0, 2);
 const mat = new THREE.MeshStandardMaterial({
