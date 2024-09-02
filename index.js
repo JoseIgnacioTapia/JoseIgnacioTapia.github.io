@@ -18,14 +18,27 @@ const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 camera.position.z = 2;
 const scene = new THREE.Scene();
 
-// Change background color scene
-scene.background = new THREE.Color(0x0d1a2b);
+// Background color scene
+const darkBlue = new THREE.Color(0x080f1a);
+const lightBlue = new THREE.Color(0x234563); // Un tono ligeramente más claro
+scene.background = darkBlue;
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.03;
 // Desable scroll zoom
 controls.enableZoom = false;
+
+// Variables to store the mouse position
+let mouseX = 0;
+let mouseY = 0;
+const maxDistance = Math.sqrt(w * w + h * h) / 2; // Maximum possible distance to the center
+
+// Detecting mouse movement
+window.addEventListener('mousemove', event => {
+  mouseX = event.clientX - w / 2;
+  mouseY = event.clientY - h / 2;
+});
 
 const geo = new THREE.IcosahedronGeometry(1.0, 2);
 const mat = new THREE.MeshStandardMaterial({
@@ -50,6 +63,14 @@ scene.add(hemiLight);
 
 function animate(t = 0) {
   requestAnimationFrame(animate);
+
+  // Calculate the distance from the cursor to the center
+  const distance = Math.sqrt(mouseX * mouseX + mouseY * mouseY);
+  const intensity = 1 - Math.min(distance / maxDistance, 1); // Intensity based on distance
+
+  // Interpolate between the two colors
+  scene.background = darkBlue.clone().lerp(lightBlue, intensity * 0.2); // Subtle adjustment
+
   mesh.rotation.y = t * 0.0001;
   renderer.render(scene, camera);
   controls.update();
