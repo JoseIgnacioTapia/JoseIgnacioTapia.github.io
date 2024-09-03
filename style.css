@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
 
 /* ***** Custom Properties ***** */
 :root {
@@ -20,6 +21,7 @@
   --white-alpha-color: rgba(255, 255, 255, 0.5);
   --black-alpha-color: rgba(0, 0, 0, 0.5);
   --font: 'IBM Plex Sans', sans-serif;
+  --second-font: 'Teko', sans-serif;
   --max-width: 1200px;
   --header-height: 5rem;
 }
@@ -252,6 +254,52 @@ p {
   .contact-form input[type='submit'] {
     margin-left: 0;
   }
+}
+
+/* Hero Animation */
+.hidden {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: none;
+}
+
+.home {
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  background-color: #080f1a;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  margin: auto;
+  margin-top: 15%;
+  height: 60vh;
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #25b09b;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+#animation-container {
+  display: none;
 }
 
 /* HeroImage */
@@ -510,6 +558,76 @@ progress::-moz-progress-bar {
   .text-lg-right {
     text-align: right;
   }
+}
+
+/* Contenedor del título */
+#title {
+  position: absolute;
+  z-index: 10; /* Asegura que esté sobre la animación */
+  font-family: var(--second-font);
+  /* color: var(--second-color); */
+  color: #ccc;
+  font-size: 5vw;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+/* Estilos para cada parte del título */
+.title-part {
+  opacity: 0; /* Comienza invisible */
+  position: relative;
+}
+
+/* Animaciones */
+@keyframes slideInFromLeft {
+  from {
+    left: -100%;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBack {
+  from {
+    transform: translateZ(-500px);
+    opacity: 0;
+  }
+  to {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    right: -100%;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+/* Aplicar animaciones a cada parte del título */
+#name {
+  animation: slideInFromLeft 1s ease-out forwards;
+}
+
+#dash {
+  animation: slideInFromBack 1s ease-out forwards;
+  animation-delay: 0.5s; /* Retraso para que venga después del nombre */
+}
+
+#role {
+  animation: slideInFromRight 1s ease-out forwards;
+  animation-delay: 1s; /* Retraso para que venga después del guion */
 }
 
 /* ***** Site Styles ***** */
