@@ -32,12 +32,14 @@ controls.enableZoom = false;
 // Variables to store the mouse position
 let mouseX = 0;
 let mouseY = 0;
+let mouseMoved = false; // variable para comprobar si el mouse se movió
 const maxDistance = Math.sqrt(w * w + h * h) / 2; // Maximum possible distance to the center
 
 // Detecting mouse movement
 window.addEventListener('mousemove', event => {
   mouseX = event.clientX - w / 2;
   mouseY = event.clientY - h / 2;
+  mouseMoved = true;
 });
 
 const geo = new THREE.IcosahedronGeometry(1.0, 2);
@@ -64,12 +66,15 @@ scene.add(hemiLight);
 function animate(t = 0) {
   requestAnimationFrame(animate);
 
-  // Calculate the distance from the cursor to the center
-  const distance = Math.sqrt(mouseX * mouseX + mouseY * mouseY);
-  const intensity = 1 - Math.min(distance / maxDistance, 1); // Intensity based on distance
+  // Solo realiza la interpolación si el ratón se ha movido
+  if (mouseMoved) {
+    // Calculate the distance from the cursor to the center
+    const distance = Math.sqrt(mouseX * mouseX + mouseY * mouseY);
+    const intensity = 1 - Math.min(distance / maxDistance, 1); // Intensity based on distance
 
-  // Interpolate between the two colors
-  scene.background = darkBlue.clone().lerp(lightBlue, intensity * 0.2); // Subtle adjustment
+    // Interpolate between the two colors
+    scene.background = darkBlue.clone().lerp(lightBlue, intensity * 0.2); // Subtle adjustment
+  }
 
   mesh.rotation.y = t * 0.0001;
   renderer.render(scene, camera);
@@ -80,5 +85,7 @@ animate();
 // Show the animation container and hide the loader when Three.js is ready
 window.addEventListener('load', () => {
   loader.style.display = 'none';
-  container.style.display = 'block';
+  container.style.display = 'flex';
+  container.style.justifyContent = 'center';
+  container.style.alignItems = 'center';
 });
