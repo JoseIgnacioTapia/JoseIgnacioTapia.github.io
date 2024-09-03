@@ -65,8 +65,42 @@ mesh.add(wireMesh);
 const hemiLight = new THREE.HemisphereLight(0x0099ff, 0xaa5500);
 scene.add(hemiLight);
 
+// Agregar particulas de chispas
+const particleCount = 1000; // Numero de particulas
+const particlesGeometry = new THREE.BufferGeometry();
+const positions = new Float32Array(particleCount * 3); // Array para almacenar posiciones de partículas
+
+for (let i = 0; i < particleCount; i++) {
+  const x = (Math.random() - 0.5) * 5; // Generar posición aleatoria en el espacio
+  const y = (Math.random() - 0.5) * 5;
+  const z = (Math.random() - 0.5) * 5;
+  positions.set([x, y, z], i * 3);
+}
+
+particlesGeometry.setAttribute(
+  'position',
+  new THREE.BufferAttribute(positions, 3)
+);
+
+// Material de particulas (chispas)
+const particlesMaterial = new THREE.PointsMaterial({
+  // color: 0xffaa00,
+  color: 0xa0db8e,
+  size: 0.05,
+  transparent: true,
+  opacity: 0.8,
+  blending: THREE.AdditiveBlending, // Para dar un efecto de brillo
+});
+
+// Crear objeto de partículas
+const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+scene.add(particles);
+
 function animate(t = 0) {
   requestAnimationFrame(animate);
+
+  // Animar las partículas (rotación)
+  particles.rotation.y += 0.001; // Rotar las particulas lentamente
 
   // Solo realiza la interpolación si el ratón se ha movido
   if (mouseMoved) {

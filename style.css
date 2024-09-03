@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
 
 /* ***** Custom Properties ***** */
 :root {
@@ -20,6 +21,7 @@
   --white-alpha-color: rgba(255, 255, 255, 0.5);
   --black-alpha-color: rgba(0, 0, 0, 0.5);
   --font: 'IBM Plex Sans', sans-serif;
+  --second-font: 'Teko', sans-serif;
   --max-width: 1200px;
   --header-height: 5rem;
 }
@@ -562,8 +564,9 @@ progress::-moz-progress-bar {
 #title {
   position: absolute;
   z-index: 10; /* Asegura que esté sobre la animación */
-  font-family: var(--font);
-  color: var(--second-color);
+  font-family: var(--second-font);
+  /* color: var(--second-color); */
+  color: #ccc;
   font-size: 5vw;
   font-weight: bold;
   display: flex;
