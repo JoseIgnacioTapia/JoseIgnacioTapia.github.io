@@ -575,6 +575,12 @@ progress::-moz-progress-bar {
   gap: 0.5em;
 }
 
+@media screen and (max-width: 768px) {
+  #title {
+    font-size: 7vw;
+  }
+}
+
 /* Estilos para cada parte del título */
 .title-part {
   opacity: 0; /* Comienza invisible */
