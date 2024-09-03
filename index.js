@@ -46,6 +46,8 @@ const geo = new THREE.IcosahedronGeometry(1.0, 2);
 const mat = new THREE.MeshStandardMaterial({
   color: 0xffffff,
   flatShading: true,
+  emissive: 0x3b6978, // Color emisivo
+  emissiveIntensity: 0.4, // Intensidad de la emisión de la luz
 });
 const mesh = new THREE.Mesh(geo, mat);
 // Reduce the object scale by 25%
